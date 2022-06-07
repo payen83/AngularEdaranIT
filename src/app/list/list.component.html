@@ -1,0 +1,14 @@
+<mat-grid-list cols="5" class="grid-container" rowHeight="350px">
+    <mat-grid-tile *ngFor="let photo of photoList">
+        <mat-card class="dashboard-card">
+            <mat-card-title-group>
+              <mat-card-title>Album: {{ photo.albumId }}</mat-card-title>
+              <mat-card-subtitle>Id: {{ photo.id }}</mat-card-subtitle>
+              <img mat-card-md-image [src]="photo.url">
+            </mat-card-title-group>
+            <mat-card-content>
+                {{ photo.title }}
+            </mat-card-content>
+          </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

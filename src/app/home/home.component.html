@@ -1,0 +1,19 @@
+
+<h1>Welcome to {{ title }}</h1>
+<button mat-raised-button color="primary" (click)="btnClick()">Click Me</button>
+<p>{{ sentence }}</p>
+
+<button (click)="btnCounter()">Counter</button>
+<h2>You have clicked {{ click_counter }} times</h2>
+
+<div class="play-container" [ngClass]="click_counter > 4 ? 'active' : 'inactive'">
+  <div *ngIf="click_counter > 4 && click_counter < 10; else less">
+    <h3>You have clicked MORE than 4 times</h3>
+  </div>
+  <div *ngIf="click_counter >= 10">
+    <h3>You have clicked MORE than 10 times</h3>
+  </div>
+  <ng-template #less>
+    <h3>You have clicked less or equal to 4 times</h3>
+  </ng-template> 
+</div>
